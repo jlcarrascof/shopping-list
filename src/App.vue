@@ -6,6 +6,14 @@
   <div id="app">
     <h1>Welcome to your shopping list app!</h1>
     <p>Let's add some products</p>
+
+    <input
+      type="text"
+      v-model="newItem"
+      placeholder="Write a product description"
+    />
+
+
   </div>
 </template>
 
