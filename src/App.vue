@@ -13,6 +13,7 @@
       placeholder="Write a product description"
     />
 
+    <button @click="addItem">Add</button>
 
   </div>
 </template>
