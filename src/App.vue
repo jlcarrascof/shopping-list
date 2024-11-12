@@ -10,5 +10,11 @@
 </template>
 
 <style scoped>
-
+  #app {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 600px;
+    margin: auto;
+    color: #333;
+  }
 </style>
