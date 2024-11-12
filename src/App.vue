@@ -3,6 +3,11 @@
 
   const newItem = ref("");
 
+  function addItem() {
+    console.log(`Product Added: ${newItem.value}`);
+    newItem.value = "";
+  }
+
 </script>
 
 <template>
