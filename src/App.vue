@@ -1,4 +1,12 @@
 <script setup>
+  import { ref } from "vue";
+
+  const newItem = ref("");
+
+  function addItem() {
+    console.log(`Product Added: ${newItem.value}`);
+    newItem.value = "";
+  }
 
 </script>
 
@@ -6,6 +14,15 @@
   <div id="app">
     <h1>Welcome to your shopping list app!</h1>
     <p>Let's add some products</p>
+
+    <input
+      type="text"
+      v-model="newItem"
+      placeholder="Write a product description"
+    />
+
+    <button @click="addItem">Add</button>
+
   </div>
 </template>
 
@@ -16,5 +33,22 @@
     max-width: 600px;
     margin: auto;
     color: #333;
+  }
+
+  input {
+    padding: 8px;
+    font-size: 16px;
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
   }
 </style>
