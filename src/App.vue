@@ -34,4 +34,11 @@
     margin: auto;
     color: #333;
   }
+
+  input {
+    padding: 8px;
+    font-size: 16px;
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+  }
 </style>
