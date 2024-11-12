@@ -41,4 +41,14 @@
     width: calc(100% - 20px);
     margin-bottom: 10px;
   }
+
+  button {
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
 </style>
