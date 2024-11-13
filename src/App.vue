@@ -26,6 +26,12 @@
 
     <button @click="addItem">Add</button>
 
+    <ul>
+      <li v-for="(item, index) in items" :key="index">
+        {{ item }}
+      </li>
+    </ul>
+
   </div>
 </template>
 
