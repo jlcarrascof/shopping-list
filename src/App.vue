@@ -6,6 +6,7 @@
 
   function addItem() {
     if (newItem.value.trim()) {
+      items.value.push(newItem.value.trim());
       newItem.value = "";
     }
   }
