@@ -60,4 +60,12 @@
     border: none;
     border-radius: 5px;
   }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  
 </style>
