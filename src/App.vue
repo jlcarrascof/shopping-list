@@ -2,6 +2,7 @@
   import { ref } from "vue";
 
   const newItem = ref("");
+  const items = ref([]);
 
   function addItem() {
     console.log(`Product Added: ${newItem.value}`);
