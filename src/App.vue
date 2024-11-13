@@ -5,8 +5,9 @@
   const items = ref([]);
 
   function addItem() {
-    console.log(`Product Added: ${newItem.value}`);
-    newItem.value = "";
+    if (newItem.value.trim()) {
+      newItem.value = "";
+    }
   }
 
 </script>
