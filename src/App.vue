@@ -1,5 +1,6 @@
 <script setup>
   import { ref } from "vue";
+  import ShoppingItem from "./components/ShoppingItem.vue";
 
   const newItem = ref("");
   const items = ref([]);
