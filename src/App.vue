@@ -28,7 +28,7 @@
 
     <p v-if="items.length === 0">Your shopping list is empty!</p>
 
-    <ul>
+    <ul v-show="items.length > 0">
       <li v-for="(item, index) in items" :key="index">
         {{ item }}
       </li>
