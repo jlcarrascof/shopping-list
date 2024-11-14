@@ -2,10 +2,13 @@
   import { ref } from "vue";
 
   const newItem = ref("");
+  const items = ref([]);
 
   function addItem() {
-    console.log(`Product Added: ${newItem.value}`);
-    newItem.value = "";
+    if (newItem.value.trim()) {
+      items.value.push(newItem.value.trim());
+      newItem.value = "";
+    }
   }
 
 </script>
@@ -22,6 +25,12 @@
     />
 
     <button @click="addItem">Add</button>
+
+    <ul>
+      <li v-for="(item, index) in items" :key="index">
+        {{ item }}
+      </li>
+    </ul>
 
   </div>
 </template>
@@ -51,4 +60,20 @@
     border: none;
     border-radius: 5px;
   }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  li {
+    padding: 8px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+
+
 </style>
