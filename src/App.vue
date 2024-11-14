@@ -77,5 +77,9 @@
     border-radius: 5px;
   }
 
+  p[v-if] {
+    color: red;
+    font-style: italic;
+  }
 
 </style>
