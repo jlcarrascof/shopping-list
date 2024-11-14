@@ -3,7 +3,7 @@
 </script>
 
 <template>
-
+    {{ item }}
 </template>
 
 <style scoped>
