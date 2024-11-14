@@ -3,7 +3,9 @@
 </script>
 
 <template>
-    {{ item }}
+    <li class="shopping-item">
+        {{ item }}
+    </li>
 </template>
 
 <style scoped>

@@ -69,14 +69,6 @@
     margin-top: 20px;
   }
 
-  li {
-    padding: 8px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    margin-bottom: 5px;
-    border-radius: 5px;
-  }
-
  .empty-message {
     color: red;
     font-style: italic;
