@@ -1,5 +1,6 @@
 <script setup>
   import { ref } from "vue";
+  import ShoppingItem from "./components/ShoppingItem.vue";
 
   const newItem = ref("");
   const items = ref([]);
@@ -29,9 +30,12 @@
     <p v-if="items.length === 0" class="empty-message">Your shopping list is empty!</p>
 
     <ul v-show="items.length > 0">
-      <li v-for="(item, index) in items" :key="index">
-        {{ item }}
-      </li>
+      <ShoppingItem
+        v-for="(item, index) in items"
+        :key="index"
+        :item="item"
+      />
+
     </ul>
 
   </div>
@@ -67,14 +71,6 @@
     list-style-type: none;
     padding: 0;
     margin-top: 20px;
-  }
-
-  li {
-    padding: 8px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    margin-bottom: 5px;
-    border-radius: 5px;
   }
 
  .empty-message {
