@@ -36,7 +36,6 @@
         :item="item"
       />
 
-      </li>
     </ul>
 
   </div>
