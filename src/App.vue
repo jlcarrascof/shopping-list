@@ -26,7 +26,9 @@
 
     <button @click="addItem">Add</button>
 
-    <ul>
+    <p v-if="items.length === 0" class="empty-message">Your shopping list is empty!</p>
+
+    <ul v-show="items.length > 0">
       <li v-for="(item, index) in items" :key="index">
         {{ item }}
       </li>
@@ -75,5 +77,9 @@
     border-radius: 5px;
   }
 
+ .empty-message {
+    color: red;
+    font-style: italic;
+  }
 
 </style>
