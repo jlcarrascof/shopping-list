@@ -26,6 +26,8 @@
 
     <button @click="addItem">Add</button>
 
+    <p v-if="items.length === 0">Your shopping list is empty!</p>
+
     <ul>
       <li v-for="(item, index) in items" :key="index">
         {{ item }}
