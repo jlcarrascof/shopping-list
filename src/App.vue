@@ -30,7 +30,11 @@
     <p v-if="items.length === 0" class="empty-message">Your shopping list is empty!</p>
 
     <ul v-show="items.length > 0">
-      <li v-for="(item, index) in items" :key="index">
+      <ShoppingItem
+        v-for="(item, index) in items"
+        :key="index"
+        :item="item"
+      />
 
       </li>
     </ul>
