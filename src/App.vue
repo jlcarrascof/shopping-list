@@ -12,6 +12,10 @@
     }
   }
 
+  function removeItem(itemToRemove) {
+    items.value = items.value.filter(item => item !== itemToRemove);
+  }
+
 </script>
 
 <template>
