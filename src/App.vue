@@ -34,6 +34,7 @@
         v-for="(item, index) in items"
         :key="index"
         :item="item"
+        @remove="removeItem"
       />
 
     </ul>
