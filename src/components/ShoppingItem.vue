@@ -4,6 +4,9 @@
     const props = defineProps({
         item: String
     });
+
+    const emit = defineEmits();
+
 </script>
 
 <template>
