@@ -22,6 +22,8 @@
 
 <style scoped>
     .shopping-item {
+        display: flex;
+        justify-content: space-between;
         padding: 8px;
         background-color: #f9f9f9;
         border: 1px solid #ddd;
