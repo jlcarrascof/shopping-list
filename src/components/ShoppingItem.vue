@@ -28,4 +28,13 @@
         margin-bottom: 5px;
         border-radius: 5px;
     }
+
+    button {
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 4px 8px;
+        cursor: pointer;
+    }
 </style>
