@@ -9,6 +9,7 @@
 <template>
     <li class="shopping-item">
         {{ item }}
+        <button @click="removeItem">Eliminar</button>
     </li>
 </template>
 
