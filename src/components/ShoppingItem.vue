@@ -14,7 +14,7 @@
 <template>
     <li class="shopping-item">
         {{ item }}
-        <button @click="removeItem">Eliminar</button>
+        <button @click="removeItem">Delete</button>
     </li>
 </template>
 
