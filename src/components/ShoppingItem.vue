@@ -23,7 +23,7 @@
         <button @click="toggleEditMode">
             {{ isEditing ? 'Guardar' : 'Editar' }}
         </button>
-        <button @click="removeItem">Delete</button>
+        <button @click="$emit('remove', item)" class="delete-btn">Delete</button>
     </li>
 </template>
 
