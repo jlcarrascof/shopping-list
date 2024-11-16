@@ -1,4 +1,7 @@
 <script setup>
+
+    import { ref, watch } from 'vue'; // Importamos watch para observar cambios
+
     const props = defineProps({
         item: String,
     });
