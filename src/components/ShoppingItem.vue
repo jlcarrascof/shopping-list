@@ -9,6 +9,9 @@
         emit('remove', props.item); // Emit the 'remove' event
     }
 
+    const isEditing = ref(false);
+    
+
 </script>
 
 <template>
