@@ -31,10 +31,12 @@
     <li class="shopping-item">
         <span v-if="!isEditing">{{ item }}</span>
         <input v-model="editedItem" v-if="isEditing" type="text" />
-        <button @click="toggleEditMode" class="edit-btn">
+        <div class="buttons-container">
+            <button @click="toggleEditMode" class="edit-btn">
             {{ isEditing ? 'Guardar' : 'Editar' }}
-        </button>
-        <button @click="$emit('remove', item)" class="delete-btn">Delete</button>
+            </button>
+            <button @click="$emit('remove', item)" class="delete-btn">Delete</button>
+        </div>
     </li>
 </template>
 
@@ -42,6 +44,7 @@
     .shopping-item {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 8px;
         background-color: #f9f9f9;
         border: 1px solid #ddd;
