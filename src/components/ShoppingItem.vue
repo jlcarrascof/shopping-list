@@ -18,7 +18,7 @@
 
 <template>
     <li class="shopping-item">
-        {{ item }}
+        <span v-if="!isEditing">{{ item }}</span>
         <button @click="removeItem">Delete</button>
     </li>
 </template>
