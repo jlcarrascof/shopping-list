@@ -5,10 +5,6 @@
 
     const emit = defineEmits();
 
-    function removeItem() {
-        emit('remove', props.item); // Emit the 'remove' event
-    }
-
     // control Edition mode
     const isEditing = ref(false);
     // copy the item to be modified
