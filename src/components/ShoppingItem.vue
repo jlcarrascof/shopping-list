@@ -11,6 +11,14 @@
     const isEditing = ref(false); // Controla el modo de edición
     const editedItem = ref(props.item); // Crea una copia editable del artículo
 
+    watch(
+        () => props.item,
+        (newVal) => {
+            editedItem.value = newVal; // Sincroniza editedItem con el valor actual de item
+        }
+    );
+
+
     function toggleEditMode() {
         if (isEditing.value) {
             emit('updateItem', editedItem.value); // Emitimos el artículo actualizado
