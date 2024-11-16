@@ -42,7 +42,7 @@
         v-for="(item, index) in items"
         :key="index"
         :item="item"
-        @updateItem="updateItem(index)"
+        @updateItem="updatedItem => updateItem(index, updatedItem)"
         @remove="removeItem"
       />
 
