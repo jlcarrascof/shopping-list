@@ -31,7 +31,7 @@
     <li class="shopping-item">
         <span v-if="!isEditing">{{ item }}</span>
         <input v-model="editedItem" v-if="isEditing" type="text" />
-        <button @click="toggleEditMode">
+        <button @click="toggleEditMode" class="edit-btn">
             {{ isEditing ? 'Guardar' : 'Editar' }}
         </button>
         <button @click="$emit('remove', item)" class="delete-btn">Delete</button>
