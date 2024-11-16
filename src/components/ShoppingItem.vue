@@ -9,8 +9,10 @@
         emit('remove', props.item); // Emit the 'remove' event
     }
 
+    // control Edition mode
     const isEditing = ref(false);
-    
+    // copy the item to be modified
+    const editedItem = ref(props.item);
 
 </script>
 
