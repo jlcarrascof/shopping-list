@@ -3,12 +3,21 @@
         item: String
     });
 
-    const emit = defineEmits();
+    // const emit = defineEmits();
 
     // control Edition mode
     const isEditing = ref(false);
     // copy the item to be modified
     const editedItem = ref(props.item);
+
+    function toggleEditMode() {
+         if (isEditing.value) {
+            // If we are saving, emit changes.
+            $emit('updateItem', editedItem.value);
+    }
+
+    isEditing.value = !isEditing.value; // Alternate the mode.
+}
 
 </script>
 
