@@ -35,11 +35,14 @@
     }
 
     button {
-        background-color: #ff4d4d;
         color: white;
         border: none;
         border-radius: 5px;
         padding: 4px 8px;
         cursor: pointer;
+    }
+
+    button.delete-btn {
+        background-color: #ff4d4d;
     }
 </style>
