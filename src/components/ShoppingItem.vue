@@ -65,6 +65,18 @@
         gap: 8px; /* Añade espacio entre los botones */
     }
 
+    button.edit-btn {
+        background-color: #007bff; /* Azul para Editar */
+    }
+
+    button.edit-btn:hover {
+        background-color: #0056b3; /* Azul más oscuro para hover */
+    }
+
+    button.edit-btn.is-saving {
+        background-color: #28a745; /* Verde para Guardar */
+    }
+
     button.delete-btn {
         background-color: #ff4d4d;
     }
