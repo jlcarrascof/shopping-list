@@ -20,6 +20,9 @@
     <li class="shopping-item">
         <span v-if="!isEditing">{{ item }}</span>
         <input v-model="editedItem" v-if="isEditing" type="text" />
+        <button @click="toggleEditMode">
+            {{ isEditing ? 'Guardar' : 'Editar' }}
+        </button>
         <button @click="removeItem">Delete</button>
     </li>
 </template>
