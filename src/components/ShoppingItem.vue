@@ -80,4 +80,8 @@
     button.delete-btn {
         background-color: #ff4d4d;
     }
+
+    button.delete-btn:hover {
+        background-color: #d11a2a; /* Rojo más oscuro para hover */
+    }
 </style>
