@@ -16,6 +16,10 @@
     items.value = items.value.filter(item => item !== itemToRemove);
   }
 
+  function updateItem(index, updatedItem) {
+    items.value[index] = updatedItem;
+  }
+
 </script>
 
 <template>
