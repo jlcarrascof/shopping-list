@@ -1,24 +1,19 @@
 <script setup>
     const props = defineProps({
-        item: String
+        item: String,
     });
 
-    // const emit = defineEmits();
+    const emit = defineEmits(['updateItem', 'remove']); // Define los eventos
 
-    // control Edition mode
-    const isEditing = ref(false);
-    // copy the item to be modified
-    const editedItem = ref(props.item);
+    const isEditing = ref(false); // Controla el modo de edición
+    const editedItem = ref(props.item); // Crea una copia editable del artículo
 
     function toggleEditMode() {
-         if (isEditing.value) {
-            // If we are saving, emit changes.
-            $emit('updateItem', editedItem.value);
+        if (isEditing.value) {
+            emit('updateItem', editedItem.value); // Emitimos el artículo actualizado
+        }
+        isEditing.value = !isEditing.value; // Alternamos entre edición y visualización
     }
-
-    isEditing.value = !isEditing.value; // Alternate the mode.
-}
-
 </script>
 
 <template>
