@@ -60,6 +60,11 @@
         cursor: pointer;
     }
 
+    .buttons-container {
+        display: flex; /* Alinea los botones horizontalmente */
+        gap: 8px; /* Añade espacio entre los botones */
+    }
+
     button.delete-btn {
         background-color: #ff4d4d;
     }
