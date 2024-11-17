@@ -16,6 +16,10 @@
     items.value = items.value.filter(item => item !== itemToRemove);
   }
 
+  function updateItem(index, updatedItem) {
+    items.value[index] = updatedItem;
+  }
+
 </script>
 
 <template>
@@ -38,6 +42,7 @@
         v-for="(item, index) in items"
         :key="index"
         :item="item"
+        @updateItem="updatedItem => updateItem(index, updatedItem)"
         @remove="removeItem"
       />
 
