@@ -12,6 +12,10 @@
     }
   }
 
+  function removeItem(itemToRemove) {
+    items.value = items.value.filter(item => item !== itemToRemove);
+  }
+
 </script>
 
 <template>
@@ -34,6 +38,7 @@
         v-for="(item, index) in items"
         :key="index"
         :item="item"
+        @remove="removeItem"
       />
 
     </ul>
