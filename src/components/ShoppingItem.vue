@@ -33,7 +33,9 @@
 </script>
 
 <template>
-    <li class="shopping-item">
+    <li class="shopping-item"
+        :class="{ purchased: isPurchased}"
+    >
         <span v-if="!isEditing">{{ item }}</span>
         <input v-model="editedItem" v-if="isEditing" type="text" />
         <div class="buttons-container">
