@@ -26,6 +26,10 @@
         }
         isEditing.value = !isEditing.value;
     }
+
+    function togglePurchased() {
+        isPurchased.value = !isPurchased.value;
+    }
 </script>
 
 <template>
