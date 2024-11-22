@@ -35,6 +35,7 @@
 <template>
     <li class="shopping-item"
         :class="{ purchased: isPurchased}"
+        @click="togglePurchased"
     >
         <span v-if="!isEditing">{{ item }}</span>
         <input v-model="editedItem" v-if="isEditing" type="text" />
