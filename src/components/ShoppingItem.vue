@@ -60,6 +60,12 @@
         border-radius: 5px;
     }
 
+    .shopping-item.purchased {
+        text-decoration: line-through;
+        color: #6c757d;
+        background-color: #e9ecef;
+    }
+
     button {
         color: white;
         border: none;
