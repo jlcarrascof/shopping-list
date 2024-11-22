@@ -1,41 +1,49 @@
 <script setup>
 
-    import { ref, watch } from 'vue'; // Importamos watch para observar cambios
+    import { ref, watch } from 'vue';
 
     const props = defineProps({
         item: String,
     });
 
-    const emit = defineEmits(['updateItem', 'remove']); // Define los eventos
+    const emit = defineEmits(['updateItem', 'remove']);
 
-    const isEditing = ref(false); // Controla el modo de edición
-    const editedItem = ref(props.item); // Crea una copia editable del artículo
+    const isEditing = ref(false);
+    const isPurchased = ref(false);
+    const editedItem = ref(props.item);
 
     watch(
         () => props.item,
         (newVal) => {
-            editedItem.value = newVal; // Sincroniza editedItem con el valor actual de item
+            editedItem.value = newVal;
         }
     );
 
 
     function toggleEditMode() {
         if (isEditing.value) {
-            emit('updateItem', editedItem.value); // Emitimos el artículo actualizado
+            emit('updateItem', editedItem.value);
         }
-        isEditing.value = !isEditing.value; // Alternamos entre edición y visualización
+        isEditing.value = !isEditing.value;
+    }
+
+    function togglePurchased() {
+        isPurchased.value = !isPurchased.value;
     }
 </script>
 
 <template>
-    <li class="shopping-item">
+    <li class="shopping-item"
+        :class="{ purchased: isPurchased}"
+        @click.stop="togglePurchased"
+    >
         <span v-if="!isEditing">{{ item }}</span>
         <input v-model="editedItem" v-if="isEditing" type="text" />
         <div class="buttons-container">
-            <button @click="toggleEditMode" class="edit-btn">
+            <button @click.stop="toggleEditMode" class="edit-btn">
             {{ isEditing ? 'Guardar' : 'Editar' }}
             </button>
-            <button @click="$emit('remove', item)" class="delete-btn">Delete</button>
+            <button @click.stop="$emit('remove', item)" class="delete-btn">Delete</button>
         </div>
     </li>
 </template>
@@ -52,6 +60,12 @@
         border-radius: 5px;
     }
 
+    .shopping-item.purchased {
+        text-decoration: line-through;
+        color: #6c757d;
+        background-color: #e9ecef;
+    }
+
     button {
         color: white;
         border: none;
@@ -61,20 +75,20 @@
     }
 
     .buttons-container {
-        display: flex; /* Alinea los botones horizontalmente */
-        gap: 8px; /* Añade espacio entre los botones */
+        display: flex;
+        gap: 8px;
     }
 
     button.edit-btn {
-        background-color: #007bff; /* Azul para Editar */
+        background-color: #007bff;
     }
 
     button.edit-btn:hover {
-        background-color: #0056b3; /* Azul más oscuro para hover */
+        background-color: #0056b3;
     }
 
     button.edit-btn.is-saving {
-        background-color: #28a745; /* Verde para Guardar */
+        background-color: #28a745;
     }
 
     button.delete-btn {
@@ -82,6 +96,6 @@
     }
 
     button.delete-btn:hover {
-        background-color: #d11a2a; /* Rojo más oscuro para hover */
+        background-color: #d11a2a;
     }
 </style>
