@@ -40,10 +40,10 @@
         <span v-if="!isEditing">{{ item }}</span>
         <input v-model="editedItem" v-if="isEditing" type="text" />
         <div class="buttons-container">
-            <button @click="toggleEditMode" class="edit-btn">
+            <button @click.stop="toggleEditMode" class="edit-btn">
             {{ isEditing ? 'Guardar' : 'Editar' }}
             </button>
-            <button @click="$emit('remove', item)" class="delete-btn">Delete</button>
+            <button @click.stop="$emit('remove', item)" class="delete-btn">Delete</button>
         </div>
     </li>
 </template>
