@@ -3,7 +3,7 @@
     import { ref, watch } from 'vue';
 
     const props = defineProps({
-        item: String,
+        item: Object, // kind of: { name, isPurchased}
     });
 
     const emit = defineEmits(['updateItem', 'remove']);
