@@ -12,8 +12,8 @@
     }
   }
 
-  function removeItem(itemToRemove) {
-    items.value = items.value.filter(item => item !== itemToRemove);
+  function removeItem(index) {
+    items.value.splice(index, 1); // Remove the Item by index
   }
 
   function updateItem(index, updatedItem) {
