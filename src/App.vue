@@ -42,8 +42,9 @@
         v-for="(item, index) in items"
         :key="index"
         :item="item"
+        @togglePurchased="togglePurchased(index)"
         @updateItem="updatedItem => updateItem(index, updatedItem)"
-        @remove="removeItem"
+        @remove="removeItem(index)"
       />
 
     </ul>
