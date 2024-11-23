@@ -20,6 +20,10 @@
     items.value[index] = updatedItem;
   }
 
+  function togglePurchased(index) {
+    items.value[index].isPurchased = !items.value[index].isPurchased; // Change the shopping status
+  }
+
 </script>
 
 <template>
