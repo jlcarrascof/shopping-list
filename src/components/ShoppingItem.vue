@@ -6,7 +6,7 @@
         item: Object, // kind of: { name, isPurchased}
     });
 
-    const emit = defineEmits(['updateItem', 'remove']);
+    const emit = defineEmits(['updateItem', 'togglePurchased', 'remove']);
 
     const isEditing = ref(false);
     const isPurchased = ref(false);
