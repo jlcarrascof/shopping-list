@@ -10,7 +10,7 @@
 
     const isEditing = ref(false);
     const isPurchased = ref(false);
-    const editedItem = ref(props.item);
+    const editedItem = ref(props.item.name);
 
     watch(
         () => props.item,
@@ -22,13 +22,13 @@
 
     function toggleEditMode() {
         if (isEditing.value) {
-            emit('updateItem', editedItem.value);
+            emit('updateItem', { ...props.item, name: editedItem.value });
         }
         isEditing.value = !isEditing.value;
     }
 
     function togglePurchased() {
-        isPurchased.value = !isPurchased.value;
+        emit('togglePurchased');
     }
 </script>
 
@@ -37,7 +37,7 @@
         :class="{ purchased: isPurchased}"
         @click.stop="togglePurchased"
     >
-        <span v-if="!isEditing">{{ item }}</span>
+        <span v-if="!isEditing">{{ item.name }}</span>
         <input v-model="editedItem" v-if="isEditing" type="text" />
         <div class="buttons-container">
             <button @click.stop="toggleEditMode" class="edit-btn">
