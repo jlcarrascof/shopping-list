@@ -7,7 +7,7 @@
 
   function addItem() {
     if (newItem.value.trim()) {
-      items.value.push({ name: newItem.value.trim(), isPurchased: false});
+      items.value.push({ name: newItem.value.trim(), isPurchased: false });
       newItem.value = "";
     }
   }
