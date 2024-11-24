@@ -13,7 +13,7 @@
     const editedItem = ref(props.item.name);
 
     watch(
-        () => props.item,
+        () => props.item.name,
         (newVal) => {
             editedItem.value = newVal;
         }
