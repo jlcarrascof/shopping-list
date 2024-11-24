@@ -34,7 +34,7 @@
 
 <template>
     <li class="shopping-item"
-        :class="{ purchased: isPurchased}"
+        :class="{ purchased: item.isPurchased}"
         @click.stop="togglePurchased"
     >
         <span v-if="!isEditing">{{ item.name }}</span>
@@ -43,7 +43,7 @@
             <button @click.stop="toggleEditMode" class="edit-btn">
             {{ isEditing ? 'Guardar' : 'Editar' }}
             </button>
-            <button @click.stop="$emit('remove', item)" class="delete-btn">Delete</button>
+            <button @click.stop="$emit('remove')" class="delete-btn">Delete</button>
         </div>
     </li>
 </template>
