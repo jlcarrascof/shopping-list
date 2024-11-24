@@ -9,7 +9,6 @@
     const emit = defineEmits(['updateItem', 'togglePurchased', 'remove']);
 
     const isEditing = ref(false);
-    const isPurchased = ref(false);
     const editedItem = ref(props.item.name);
 
     watch(
