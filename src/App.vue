@@ -13,7 +13,7 @@
   }
 
   function removeItem(index) {
-    items.value.splice(index, 1); // Remove the Item by index
+    items.value.splice(index, 1); // Delete the item by index
   }
 
   function updateItem(index, updatedItem) {
