@@ -99,4 +99,10 @@
     font-style: italic;
   }
 
+  .remaining-message {
+    color: #007bff; /* Azul llamativo */
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
 </style>
