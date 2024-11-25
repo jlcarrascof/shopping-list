@@ -5,6 +5,8 @@
   const newItem = ref("");
   const items = ref([]);
 
+  const remainingItems = computed(() => items.value.filter(item => !item.isPurchased).length);
+
   function addItem() {
     if (newItem.value.trim()) {
       items.value.push({ name: newItem.value.trim(), isPurchased: false });
