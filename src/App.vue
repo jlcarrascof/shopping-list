@@ -41,6 +41,10 @@
 
     <button @click="addItem">Add</button>
 
+    <p v-if="items.length > 0" class="remaining-message">
+      You have {{ remainingItems }} items left to buy.
+    </p>
+
     <p v-if="items.length === 0" class="empty-message">Your shopping list is empty!</p>
 
     <ul v-show="items.length > 0">
