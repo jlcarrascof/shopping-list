@@ -1,5 +1,5 @@
 <script setup>
-  import { ref } from "vue";
+  import { ref, computed } from "vue";
   import ShoppingItem from "./components/ShoppingItem.vue";
 
   const newItem = ref("");
