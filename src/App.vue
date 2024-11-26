@@ -1,9 +1,11 @@
 <script setup>
-  import { ref } from "vue";
+  import { ref, computed } from "vue";
   import ShoppingItem from "./components/ShoppingItem.vue";
 
   const newItem = ref("");
   const items = ref([]);
+
+  const remainingItems = computed(() => items.value.filter(item => !item.isPurchased).length);
 
   function addItem() {
     if (newItem.value.trim()) {
@@ -38,6 +40,10 @@
     />
 
     <button @click="addItem">Add</button>
+
+    <p v-if="items.length > 0" class="remaining-message">
+      You have {{ remainingItems }} items left to buy.
+    </p>
 
     <p v-if="items.length === 0" class="empty-message">Your shopping list is empty!</p>
 
@@ -91,6 +97,12 @@
  .empty-message {
     color: red;
     font-style: italic;
+  }
+
+  .remaining-message {
+    color: #007bff; /* Azul llamativo */
+    font-weight: bold;
+    margin: 20px 0;
   }
 
 </style>
