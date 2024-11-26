@@ -7,17 +7,21 @@
 
   function addItem() {
     if (newItem.value.trim()) {
-      items.value.push(newItem.value.trim());
+      items.value.push({ name: newItem.value.trim(), isPurchased: false });
       newItem.value = "";
     }
   }
 
-  function removeItem(itemToRemove) {
-    items.value = items.value.filter(item => item !== itemToRemove);
+  function removeItem(index) {
+    items.value.splice(index, 1); // Delete the item by index
   }
 
   function updateItem(index, updatedItem) {
     items.value[index] = updatedItem;
+  }
+
+  function togglePurchased(index) {
+    items.value[index].isPurchased = !items.value[index].isPurchased; // Change the shopping status
   }
 
 </script>
@@ -42,8 +46,9 @@
         v-for="(item, index) in items"
         :key="index"
         :item="item"
+        @togglePurchased="togglePurchased(index)"
         @updateItem="updatedItem => updateItem(index, updatedItem)"
-        @remove="removeItem"
+        @remove="removeItem(index)"
       />
 
     </ul>

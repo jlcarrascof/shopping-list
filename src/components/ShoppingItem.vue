@@ -3,17 +3,16 @@
     import { ref, watch } from 'vue';
 
     const props = defineProps({
-        item: String,
+        item: Object, // kind of: { name, isPurchased}
     });
 
-    const emit = defineEmits(['updateItem', 'remove']);
+    const emit = defineEmits(['updateItem', 'togglePurchased', 'remove']);
 
     const isEditing = ref(false);
-    const isPurchased = ref(false);
-    const editedItem = ref(props.item);
+    const editedItem = ref(props.item.name);
 
     watch(
-        () => props.item,
+        () => props.item.name,
         (newVal) => {
             editedItem.value = newVal;
         }
@@ -22,28 +21,28 @@
 
     function toggleEditMode() {
         if (isEditing.value) {
-            emit('updateItem', editedItem.value);
+            emit('updateItem', { ...props.item, name: editedItem.value });
         }
         isEditing.value = !isEditing.value;
     }
 
     function togglePurchased() {
-        isPurchased.value = !isPurchased.value;
+        emit('togglePurchased');
     }
 </script>
 
 <template>
     <li class="shopping-item"
-        :class="{ purchased: isPurchased}"
+        :class="{ purchased: item.isPurchased}"
         @click.stop="togglePurchased"
     >
-        <span v-if="!isEditing">{{ item }}</span>
+        <span v-if="!isEditing">{{ item.name }}</span>
         <input v-model="editedItem" v-if="isEditing" type="text" />
         <div class="buttons-container">
             <button @click.stop="toggleEditMode" class="edit-btn">
             {{ isEditing ? 'Guardar' : 'Editar' }}
             </button>
-            <button @click.stop="$emit('remove', item)" class="delete-btn">Delete</button>
+            <button @click.stop="$emit('remove')" class="delete-btn">Delete</button>
         </div>
     </li>
 </template>
